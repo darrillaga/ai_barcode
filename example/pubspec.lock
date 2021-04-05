@@ -28,8 +28,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "822afafd53fd4a03e7e5e0576be5236a011e43df"
-      resolved-ref: "822afafd53fd4a03e7e5e0576be5236a011e43df"
+      ref: bbf468237efb2ea88ca1b2a387a13b4b932692cd
+      resolved-ref: bbf468237efb2ea88ca1b2a387a13b4b932692cd
       url: "git://github.com/darrillaga/ai_barcode_web.git"
     source: git
     version: "2.0.1"
