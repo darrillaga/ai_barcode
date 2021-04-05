@@ -6,11 +6,11 @@ import 'package:flutter/services.dart';
 class AiBarcodeMobileCreatorPlugin extends AiBarcodeCreatorPlatform {
   @override
   Widget buildCreatorView(BuildContext context) {
-    return _barcodeCreator(context: context);
+    return _barcodeCreator(context);
   }
 
   /// Barcode widget
-  Widget _barcodeCreator({BuildContext context}) {
+  Widget _barcodeCreator(BuildContext context) {
     TargetPlatform targetPlatform = Theme.of(context).platform;
     if (targetPlatform == TargetPlatform.android) {
       return AndroidView(

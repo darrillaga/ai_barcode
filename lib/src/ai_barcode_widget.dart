@@ -20,12 +20,11 @@ class PlatformAiBarcodeScannerWidget extends StatefulWidget {
   ///
   /// Constructor.
   PlatformAiBarcodeScannerWidget({
-    @required ScannerController platformScannerController,
-    String unsupportedDescription,
-  }) {
-    _platformScannerController = platformScannerController;
-    _unsupportedDescription = unsupportedDescription;
-  }
+    required ScannerController platformScannerController,
+    String? unsupportedDescription,
+  }) :
+      this._platformScannerController = platformScannerController,
+      this._unsupportedDescription = unsupportedDescription ?? "";
 
   @override
   State<StatefulWidget> createState() {
@@ -47,11 +46,7 @@ class _PlatformScannerWidgetState
   ///
   /// CreatedListener.
   _widgetCreatedListener() {
-    if (widget._platformScannerController != null) {
-      if (widget._platformScannerController._scannerViewCreated != null) {
-        widget._platformScannerController._scannerViewCreated();
-      }
-    }
+    widget._platformScannerController._scannerViewCreated();
   }
 
   ///
@@ -99,12 +94,11 @@ class ScannerController {
   ///
   /// Constructor.
   ScannerController({
-    @required scannerResult(String result),
-    scannerViewCreated(),
-  }) {
-    _scannerResult = scannerResult;
-    _scannerViewCreated = scannerViewCreated;
-  }
+    required scannerResult(String result),
+    required scannerViewCreated(),
+  }) :
+      this._scannerResult = scannerResult,
+      this._scannerViewCreated = scannerViewCreated;
 
   Function() get scannerViewCreated => _scannerViewCreated;
 
@@ -168,14 +162,14 @@ class PlatformAiBarcodeCreatorWidget extends StatefulWidget {
   String _initialValue;
   String _unsupportedDescription;
   PlatformAiBarcodeCreatorWidget({
-    @required CreatorController creatorController,
-    @required String initialValue,
-    String unsupportedDescription,
-  }) {
-    _creatorController = creatorController;
-    _initialValue = initialValue;
-    _unsupportedDescription = unsupportedDescription;
-  }
+    required CreatorController creatorController,
+    required String initialValue,
+    required String unsupportedDescription,
+  }) :
+      this._creatorController = creatorController,
+      this._initialValue = initialValue,
+      this._unsupportedDescription = unsupportedDescription;
+
   @override
   State<StatefulWidget> createState() {
     return _PlatformAiBarcodeCreatorState();
@@ -227,13 +221,12 @@ class CreatorController {
   Function() _creatorViewCreated;
 
   CreatorController({
-    Function() creatorViewCreated,
-  }) {
-    _creatorViewCreated = creatorViewCreated;
-  }
+    required Function() creatorViewCreated,
+  }) :
+      this._creatorViewCreated = creatorViewCreated;
 
   void updateValue({
-    @required String value,
+    required String value,
   }) {
     AiBarcodeCreatorPlatform.instance.updateQRCodeValue(value);
   }
