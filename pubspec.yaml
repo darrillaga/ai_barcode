@@ -19,7 +19,7 @@ dependencies:
   ai_barcode_web:
     git:
       url: git://github.com/darrillaga/ai_barcode_web.git
-      ref: bbf468237efb2ea88ca1b2a387a13b4b932692cd
+      ref: 4cf1a8a834e3cc95bb5421593555532454231c81
 dev_dependencies:
   flutter_test:
     sdk: flutter
