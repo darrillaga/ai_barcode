@@ -14,8 +14,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "96ffe7b12d51931f2da8b3004c2d2b0996755379"
-      resolved-ref: "96ffe7b12d51931f2da8b3004c2d2b0996755379"
+      ref: b135b331ce96a00a87a9a3e9be0f785fb6bfc59f
+      resolved-ref: b135b331ce96a00a87a9a3e9be0f785fb6bfc59f
       url: "git://github.com/darrillaga/ai_barcode_web.git"
     source: git
     version: "2.0.1"
